@@ -6,10 +6,12 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "run:all": "node node_modules/@angular-architects/module-federation/src/server/mf-dev-server.js"
   },
   "private": true,
   "dependencies": {
+    "@angular-architects/module-federation": "^12.1.1",
     "@angular/animations": "~12.0.2",
     "@angular/common": "~12.0.2",
     "@angular/compiler": "~12.0.2",
@@ -35,6 +37,7 @@
     "karma-coverage": "~2.0.3",
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "^1.5.0",
+    "prettier": "^2.3.0",
     "typescript": "~4.2.3"
   }
 }
