@@ -1,1 +1,15 @@
 <p>welcome works!</p>
+current user is: "{{ user | async }}"
+
+<br />
+<br />
+<div class="mb-3 mr-1">
+  <label for="exampleInputPassword1" class="form-label">User name</label>
+  <input
+    type="text"
+    class="form-control"
+    id="exampleInputPassword1"
+    [(ngModel)]="newName"
+  />
+</div>
+<button type="button" class="btn btn-dark" (click)="update()">update</button>

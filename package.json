@@ -7,7 +7,8 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "run:all": "node node_modules/@angular-architects/module-federation/src/server/mf-dev-server.js"
+    "build:lib": "ng build --project shared",
+    "publish:lib": "npm publish dist/shared --registry http://localhost:4873"
   },
   "private": true,
   "dependencies": {
@@ -20,6 +21,7 @@
     "@angular/platform-browser": "~12.0.2",
     "@angular/platform-browser-dynamic": "~12.0.2",
     "@angular/router": "~12.0.2",
+    "@ng-mf/shared": "^1.0.0",
     "bootstrap": "^5.0.1",
     "rxjs": "~6.6.0",
     "tslib": "^2.1.0",
@@ -37,6 +39,7 @@
     "karma-coverage": "~2.0.3",
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "^1.5.0",
+    "ng-packagr": "^12.0.0",
     "prettier": "^2.3.0",
     "typescript": "~4.2.3"
   }
