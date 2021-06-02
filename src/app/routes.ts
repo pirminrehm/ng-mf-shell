@@ -1,3 +1,4 @@
+import { loadRemoteModule } from '@angular-architects/module-federation';
 import { Routes } from '@angular/router';
 import { WelcomeComponent } from './welcome/welcome.component';
 
@@ -8,7 +9,12 @@ export const routes: Routes = [
   },
   {
     path: 'weather',
-    component: WelcomeComponent,
+
+    loadChildren: () =>
+      loadRemoteModule({
+        remoteName: 'ngMfWeather',
+        exposedModule: './WeatherWidgetModule',
+      }).then((m) => m.WeatherWidgetModule),
   },
   {
     path: 'civil-protection',
@@ -16,7 +22,11 @@ export const routes: Routes = [
   },
   {
     path: 'alerts',
-    component: WelcomeComponent,
+    loadChildren: () =>
+      loadRemoteModule({
+        remoteName: 'ngMfNotification',
+        exposedModule: './OverviewModule',
+      }).then((m) => m.OverviewModule),
   },
   {
     path: '**',
