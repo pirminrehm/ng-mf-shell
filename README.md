@@ -1,27 +1,53 @@
-# NgMfShell
+# Angular Multi-Repo Webpack Module Federation Example (Micro Frontends)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.2.
+## The Shell App
 
-## Development server
+This repository is part of an Angular mlti-repo Webpack Module Federation example, which is explained in this readme.
+The example project consists of the followig repos:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+- [Shell App (this repository)](https://github.com/pirminrehm/ng-mf-shell#readme)
+- [Shared Lib](https://github.com/pirminrehm/ng-mf-lib#readme)
+- [Notification Domain App](https://github.com/pirminrehm/ng-mf-notification#readme)
+- [Weather Domain App](https://github.com/pirminrehm/ng-mf-weather#readme)
 
-## Code scaffolding
+Module Federation can be used to composite multiple independet Angular apps on runtime in the Browser as so-called Micro Frontends (MFs).
+For more information on Micro Frontends and Module Federation take a look at [Manfred Steyers Blog series](https://www.angulararchitects.io/en/aktuelles/the-microfrontend-revolution-part-2-module-federation-with-angular/).
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Provide the Shell App
 
-## Build
+To provide the lib, make sure you have provided the corresponding Shared Lib via registry on port `4873`, as described [here](https://github.com/pirminrehm/ng-mf-shell#readme).
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Then run:
 
-## Running unit tests
+- `npm i`
+- `ng serve`
+- make sure, the other domains are also served as described in their readmes
+  - Notification MF on port `5000`
+  - Weather MF on port `5100`
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Overview of the Domains/Repos
 
-## Running end-to-end tests
+- **Shell App**
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+  - is not a true domain, but has some functionality and orchestrates all other domains
+  - loads Webpack Module Federation remote entry files
+  - responsible for authentication (represented by adding an user name via input field in this example)
+  - defins basic styles (Bootstrap 5 CSS code in this example)
 
-## Further help
+- **Shared Lib**
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+  - used for communication between the MFs
+
+- **Notification App**
+
+  - all components from this domain have a blue border for easy identification
+  - provides an overview page on all created notification alerts as module
+  - provides a component "Add Notification" to add a notification alert for a given location and type
+
+- **Weather App**
+  - all components from this domain have a yellow border for easy identification
+  - provides a weather info page as module
+
+## Explanation for Example
+
+follows soon
