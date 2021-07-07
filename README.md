@@ -15,7 +15,7 @@ For more information on Micro Frontends and Module Federation take a look at [Ma
 
 ### Provide the Shell App
 
-To provide the lib, make sure you have provided the corresponding Shared Lib via registry on port `4873`, as described [here](https://github.com/pirminrehm/ng-mf-shell#readme).
+To provide the lib, make sure you have provided the corresponding Shared Lib via registry on port `4873`, as described [here](https://github.com/pirminrehm/ng-mf-lib#readme).
 
 Then run:
 
