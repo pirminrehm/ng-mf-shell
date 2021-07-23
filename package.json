@@ -19,7 +19,7 @@
     "@angular/platform-browser": "~12.0.2",
     "@angular/platform-browser-dynamic": "~12.0.2",
     "@angular/router": "~12.0.2",
-    "@ng-mf/shared": "^1.0.0",
+    "@ng-mf/shared": "1.0.0",
     "bootstrap": "^5.0.1",
     "rxjs": "~6.6.0",
     "tslib": "^2.1.0",
