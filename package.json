@@ -19,7 +19,7 @@
     "@angular/platform-browser": "^14.2.12",
     "@angular/platform-browser-dynamic": "^14.2.12",
     "@angular/router": "^14.2.12",
-    "@ng-mf/shared": "^14.0.0",
+    "@ng-mf/shared": "https://github.com/pirminrehm/ng-mf-lib/blob/a66ff73e23d8ba4e12186dab43f8dab98ce74e18/dist/tar/shared-14.0.0.tgz?raw=true",
     "bootstrap": "^5.2.3",
     "ngx-build-plus": "^14.0.0",
     "rxjs": "~6.6.0",
