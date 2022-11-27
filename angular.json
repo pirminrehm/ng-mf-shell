@@ -49,7 +49,7 @@
                 }
               ],
               "outputHashing": "all",
-              "extraWebpackConfig": "webpack.prod.config.js"
+              "extraWebpackConfig": "webpack.config.js"
             },
             "development": {
               "buildOptimizer": false,
@@ -67,12 +67,12 @@
           "configurations": {
             "production": {
               "browserTarget": "ng-mf-shell:build:production",
-              "extraWebpackConfig": "webpack.prod.config.js"
+              "extraWebpackConfig": "webpack.config.js"
             },
             "development": { "browserTarget": "ng-mf-shell:build:development" }
           },
           "defaultConfiguration": "development",
-          "options": { "extraWebpackConfig": "webpack.config.js", "port": 4200 }
+          "options": { "extraWebpackConfig": "webpack.config.js", "port": 4200, "publicHost": "http://localhost:4200" }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
@@ -94,6 +94,5 @@
         }
       }
     }
-  },
-  "defaultProject": "ng-mf-shell"
+  }
 }

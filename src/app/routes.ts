@@ -9,22 +9,19 @@ export const routes: Routes = [
   },
   {
     path: 'weather',
-
     loadChildren: () =>
       loadRemoteModule({
-        remoteName: 'ngMfWeather',
+        type: 'module',
+        remoteEntry: 'http://localhost:5100/remoteEntry.js',
         exposedModule: './WeatherWidgetModule',
       }).then((m) => m.WeatherWidgetModule),
-  },
-  {
-    path: 'civil-protection',
-    component: WelcomeComponent,
   },
   {
     path: 'alerts',
     loadChildren: () =>
       loadRemoteModule({
-        remoteName: 'ngMfNotification',
+        type: 'module',
+        remoteEntry: 'http://localhost:5000/remoteEntry.js',
         exposedModule: './OverviewModule',
       }).then((m) => m.OverviewModule),
   },
